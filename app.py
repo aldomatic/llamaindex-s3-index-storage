@@ -15,12 +15,12 @@ def handle_userinput(user_question, index):
 def main():
     load_dotenv()
 
-    openai.api_key= os.getenv('OPENAI_API_KEY')
+    openai.api_key= os.getenv('OPENAI_API_KEY', default='MISSING KEY')
 
-    AWS_KEY= os.getenv('AWS_KEY')
-    AWS_SECRET= os.getenv('AWS_SECRET')
-    BUCKET= os.getenv('BUCKET')
-    KEY= os.getenv('BUCKET_STORAGE_KEY')
+    AWS_KEY= os.getenv('AWS_KEY', default='MISSING KEY')
+    AWS_SECRET= os.getenv('AWS_SECRET', default='MISSING KEY')
+    BUCKET= os.getenv('BUCKET', default='MISSING KEY')
+    KEY= os.getenv('BUCKET_STORAGE_KEY', default='MISSING KEY')
 
     # set page title
     st.set_page_config(page_title="Llamaindex + S3 index storage", page_icon=None, layout="centered", initial_sidebar_state="auto", menu_items=None)
