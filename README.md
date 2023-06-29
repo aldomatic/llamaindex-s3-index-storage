@@ -51,3 +51,12 @@ This command will run the [steamlit](https://streamlit.io/) app and open it in a
 ```bash
 streamlit run app.py
 ```
+### Running the app via Docker
+Build the image
+```bash
+docker build -t mystreamlitapp .
+```
+Run the new build image
+```bash
+docker run -p 8501:8501 mystreamlitapp
+```
